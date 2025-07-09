@@ -1,0 +1,31 @@
+# 1. Create a new directory in HDFS
+hdfs dfs -mkdir /user/nandhitha/input
+
+# 2. Upload a file from local to HDFS
+hdfs dfs -put mydata.txt /user/nandhitha/input
+
+# 3. List files in a directory
+hdfs dfs -ls /user/nandhitha/input
+
+# 4. View the contents of the file
+hdfs dfs -cat /user/nandhitha/input/mydata.txt
+
+# 5. Create an empty file
+hdfs dfs -touchz /user/nandhitha/input/empty.txt
+
+# 6. Move file to a different HDFS directory
+hdfs dfs -mkdir /user/nandhitha/archive
+hdfs dfs -mv /user/nandhitha/input/mydata.txt /user/nandhitha/archive/
+
+# 7. Remove a file
+hdfs dfs -rm /user/nandhitha/archive/mydata.txt
+
+# 8. Remove entire directory
+hdfs dfs -rm -r /user/nandhitha/input
+
+# 9. Show disk usage of directory
+hdfs dfs -du /user/nandhitha/
+
+# 10. Show number of files, directories, and space
+hdfs dfs -count /user/nandhitha/
+
